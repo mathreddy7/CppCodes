@@ -7,12 +7,12 @@ int main() {
     cout.tie(NULL);
     int t;cin>>t;
     while(t--){
-        int n,m;cin>>n>>m;
+        long long n,m;cin>>n>>m;
         vector<int>a(n);
         vector<int>b(n);
         int count=0;
-        int la=0,lb=0;
-        cin>>a[0]>>b[0];
+        long long la=0,lb=0;
+        cin>>a[0]>>b[0]; 
         if(a[0]%2==b[0]){
         lb=b[0];
         }
@@ -20,15 +20,16 @@ int main() {
             count++;
             lb=b[0];
         }
-
+        la=a[0];
         for(int i=1;i<n;i++){
             cin>>a[i]>>b[i];
-            if(b[i]!=lb){
+            long long dt=a[i]-la    ;
+            int sg=abs(b[i]-lb);
+            if(dt%2!=sg){
                 count++;
-                if(lb==0) lb=1;
-                else lb=0;
             }
-            else lb=b[i];
+            lb=b[i];
+            la=a[i];
         }
         cout<<m-count<<endl;
     }
