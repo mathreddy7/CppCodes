@@ -10,11 +10,13 @@ int main() {
     int mx=0,idm=-1;
     for(int i=0;i<n;i++){
         cin>>a[i];
-        if(mx<=a[i]){
-            mx=a[i];
+        int tr=(a[i]+m-1)/m;
+        if(tr>=mx){
+            mx=tr;
             idm=i;
         }
     }
+    
     cout<<idm+1;
     
 }   
