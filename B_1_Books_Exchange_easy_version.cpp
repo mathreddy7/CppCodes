@@ -19,10 +19,13 @@ int main() {
             bool t=true;ll ct=0;
             ll z=i;
             while(t){
-                if(v[z]==z){
+                if(v[z]==i){
                     t=false;
                     ct++;
-                }else ct++;
+                }else {
+                    ct++;
+                    z=v[z];
+                }
             }
             cout<<ct<<" ";
         }
